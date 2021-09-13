@@ -1,0 +1,84 @@
+<html><head>
+    <!--<link rel="stylesheet" href="/stylesheets/app.min.css">-->
+</head><body style="margin: 0; overflow: hidden;">
+
+<img onclick="myFunction()" src="/HoverElements.svg"
+style="width: 100%; z-index: 1 ;"
+></img>
+
+<img onclick="myFunction()" src="/HoverElements2.svg"
+style="width: 100%; z-index: 3; position: absolute;
+left: 0px;
+bottom: 0px;
+top: 0px"
+></img>
+
+<img id="bar" onclick="myFunction()" src="/BarGradientRedWhitewithPosition.svg"
+style="width: 100%; z-index: 2; position: absolute;
+left: -10vw;
+bottom: 0px;
+top: 0px"
+></img>
+
+<img src="/Page1NObackground.svg"
+style="width: 100%; z-index: 2; position: absolute; top: 0%"
+></img>
+
+<div style="
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    "> 
+    <p class='backgroundtext' style="
+        font-family: Calibri;
+        font-size: 180%;
+        transform: rotate(-5deg);
+        color: #C2C2C2;
+        position: absolute;
+        left: -10vw;
+        top: -20vw;
+        width: 190vw;
+        margin: 0;
+        z-index: -1;
+        line-height: 120%;
+        height: 120vh;
+    ">Einzelfahrschein</p>
+</div>
+
+<script>
+    let MyDate = new Date();
+    let MyDateString;
+    MyDate.setDate(MyDate.getDate());
+    MyDateString = ('0' + MyDate.getDate()).slice(-2) + '.'
+             + ('0' + (MyDate.getMonth()+1)).slice(-2) + '.'
+             + MyDate.getFullYear();
+    var mydate = MyDateString + " " + "06:02"
+
+    document.getElementById("bar").animate([
+        // keyframes
+        { transform: 'translateX(0px)' },
+        { transform: 'translateX(100vw)' }
+    ], {
+        // timing options
+        duration: 3100,
+        iterations: Infinity
+    });
+
+
+    function backgroundtext() {
+        alert('workingbackgroundtext')
+        var name1 = "Ferdinand" //prompt("Name1")
+        var name2 = "Bann" //prompt("Name2")
+        var name = name1 + " " + name2
+        var oneline = "Einzelfahrschein / " + mydate + " / " + name + " / 2004935 / " + "Einzelfahrschein / " + mydate + " / " + name + " / 2004935 / ";
+        oneline = oneline + oneline + oneline
+        oneline = oneline + oneline + oneline
+        oneline = oneline + oneline + oneline
+        document.getElementsByClassName('backgroundtext')[0].innerHTML = oneline
+    }
+    
+    backgroundtext()
+
+</script>
+    
+</body></html>
