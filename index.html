@@ -21,7 +21,7 @@ top: 0px"
 ></img>
 
 <img src="/Page1NObackground.svg"
-style="width: 100%; z-index: 2; position: absolute; top: 0%"
+style="width: 100%; z-index: 4; position: absolute; top: 0%; left: 0;"
 ></img>
 
 <div style="
@@ -31,18 +31,110 @@ style="width: 100%; z-index: 2; position: absolute; top: 0%"
     "> 
     <p class='backgroundtext' style="
         font-family: Calibri;
-        font-size: 180%;
-        transform: rotate(-5deg);
-        color: #C2C2C2;
+        font-size: 5.8vw;
+        transform: rotate(-6.6deg);
+        color: #c2c2c29a;
         position: absolute;
         left: -10vw;
         top: -20vw;
-        width: 190vw;
+        width: 300vw;
         margin: 0;
         z-index: -1;
-        line-height: 120%;
+        line-height: 135%;
         height: 120vh;
     ">Einzelfahrschein</p>
+
+    <p id="starttime" style="
+        font-family: Calibri;
+        font-size: 8vw;
+        position: absolute;
+        left: 17vw;
+        top: 19.5vw;
+        margin: 0;
+        z-index: 4;
+    ">Test</p>
+
+    <p id="endtime" style="
+        font-family: Calibri;
+        font-size: 8vw;
+        position: absolute;
+        left: 17vw;
+        top: 30.5vw;
+        margin: 0;
+        z-index: 4;
+    ">Test</p>
+
+    <p style="
+        font-family: Calibri;
+        font-size: 8vw;
+        position: absolute;
+        left: 1.5vw;
+        top: 47vw;
+        margin: 0;
+        z-index: 4;
+    ">4</p>
+
+    <p style="
+    font-family: Calibri;
+    font-size: 8vw;
+    position: absolute;
+    left: 1.5vw;
+    top: 61vw;
+    margin: 0;
+    z-index: 4;
+    ">Mannheim, Hauptbahnhof</p>
+
+
+    <p id="namemain1" style="
+    font-family: Calibri;
+    font-size: 8vw;
+    position: absolute;
+    left: 1.5vw;
+    top: 75.5vw;
+    margin: 0;
+    z-index: 4;
+    "></p>
+
+    <p id="namemain2" style="
+    font-family: Calibri;
+    font-size: 8vw;
+    position: absolute;
+    left: 1.5vw;
+    top: 83.5vw;
+    margin: 0;
+    z-index: 4;
+    "></p>
+
+    <p id="personenzahl" style="
+    font-family: Calibri;
+    font-size: 8vw;
+    position: absolute;
+    left: 23vw;
+    top: 93.5vw;
+    margin: 0;
+    z-index: 4;
+    ">1</p>
+
+    <p id="Fahrpreis" style="
+    font-family: Calibri;
+    font-size: 8vw;
+    position: absolute;
+    left: 23vw;
+    top: 105.5vw;
+    margin: 0;
+    z-index: 4;
+    ">4,30 €</p>
+
+    <p id="MwSt" style="
+    font-family: Calibri;
+    font-size: 8vw;
+    position: absolute;
+    left: 23vw;
+    top: 116.5vw;
+    margin: 0;
+    z-index: 4;
+    ">0,28 €</p>
+
 </div>
 
 <script>
@@ -53,6 +145,10 @@ style="width: 100%; z-index: 2; position: absolute; top: 0%"
              + ('0' + (MyDate.getMonth()+1)).slice(-2) + '.'
              + MyDate.getFullYear();
     var mydate = MyDateString + " " + "06:02"
+    var myenddate = MyDateString + " " + "09:02"
+
+    document.getElementById('starttime').innerHTML = mydate
+    document.getElementById('endtime').innerHTML = myenddate
 
     document.getElementById("bar").animate([
         // keyframes
@@ -75,6 +171,8 @@ style="width: 100%; z-index: 2; position: absolute; top: 0%"
         oneline = oneline + oneline + oneline
         oneline = oneline + oneline + oneline
         document.getElementsByClassName('backgroundtext')[0].innerHTML = oneline
+        document.getElementById('namemain1').innerHTML = name1
+        document.getElementById('namemain2').innerHTML = name2
     }
     
     backgroundtext()
