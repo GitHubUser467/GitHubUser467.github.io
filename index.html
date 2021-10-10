@@ -156,6 +156,7 @@ style="width: 100%; z-index: 5; position: absolute; top: 0%; left: 0; visibility
     border-width: 1px;
     ">2110935</p>
     
+    <span class="buttonbottom"></span>
     <span class="dot dot1" style="left: 42.8vw;"></span>
     <span class="dot dot2"></span>
     <span class="dot dot3" style="left: 52vw;"></span>
@@ -269,7 +270,7 @@ style="width: 100%; z-index: 5; position: absolute; top: 0%; left: 0; visibility
     function NextPageonClick() {
         document.getElementsByClassName('dot1')[0].style.backgroundColor = "#FE2306"
         pagenr = 0
-        document.getElementsByClassName('dot1')[0].addEventListener("click", function() {
+        document.getElementsByClassName('buttonbottom')[0].addEventListener("click", function() {
             pagenr = pagenr + 1
             pagenr = pagenr % 3
             console.log(pagenr)
@@ -282,6 +283,14 @@ style="width: 100%; z-index: 5; position: absolute; top: 0%; left: 0; visibility
 </script>
 
 <style>
+    .buttonbottom {
+        height: 30vw;
+        width: 100vw;
+        position: absolute;
+        bottom: 0vw;
+        margin: 0;
+        z-index: 8;
+    }
     .dot {
         height: 3.2vw;
         width: 3.2vw;
